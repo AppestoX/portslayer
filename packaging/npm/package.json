@@ -1,0 +1,44 @@
+{
+  "name": "@appestox/portslayer",
+  "version": "1.1.0",
+  "description": "Cross-platform terminal tool to inspect and kill processes by port — interactive TUI dashboard included.",
+  "bin": {
+    "portslayer": "bin/cli.js",
+    "pk": "bin/cli.js"
+  },
+  "scripts": {
+    "postinstall": "node scripts/postinstall.js"
+  },
+  "files": [
+    "bin",
+    "scripts",
+    "README.md"
+  ],
+  "keywords": [
+    "port",
+    "process",
+    "kill",
+    "kill-port",
+    "network",
+    "cli",
+    "tui",
+    "devtools"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "license": "MIT",
+  "author": "PortSlayer Contributors",
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://github.com/AppestoX/portslayer-cli",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AppestoX/portslayer-cli.git",
+    "directory": "packaging/npm"
+  },
+  "bugs": {
+    "url": "https://github.com/AppestoX/portslayer-cli/issues"
+  }
+}

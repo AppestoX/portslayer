@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "portslayer"
+version = "1.1.0"
+description = "Cross-platform CLI + interactive TUI to list and kill processes by port"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "PortSlayer Contributors" }]
+keywords = ["port", "process", "kill", "network", "cli", "tui", "devtools"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: System :: Networking :: Monitoring",
+    "Topic :: Utilities",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "typer>=0.12",
+    "rich>=13",
+    "textual>=0.60",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8",
+    "pytest-cov>=5",
+]
+
+[project.scripts]
+portslayer = "portslayer.cli:app"
+pk         = "portslayer.cli:app"
+
+[project.urls]
+Homepage   = "https://github.com/AppestoX/portslayer-cli"
+Repository = "https://github.com/AppestoX/portslayer-cli"
+Issues     = "https://github.com/AppestoX/portslayer-cli/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["portslayer*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts   = "-v --tb=short"
+
+[tool.coverage.run]
+source = ["portslayer"]

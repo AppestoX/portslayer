@@ -1,0 +1,4 @@
+# Core CLI + TUI dependencies
+typer>=0.12
+rich>=13
+textual>=0.60
