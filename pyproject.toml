@@ -43,9 +43,9 @@ portslayer = "portslayer.cli:app"
 pk         = "portslayer.cli:app"
 
 [project.urls]
-Homepage   = "https://github.com/AppestoX/portslayer-cli"
-Repository = "https://github.com/AppestoX/portslayer-cli"
-Issues     = "https://github.com/AppestoX/portslayer-cli/issues"
+Homepage   = "https://github.com/AppestoX/portslayer"
+Repository = "https://github.com/AppestoX/portslayer"
+Issues     = "https://github.com/AppestoX/portslayer/issues"
 
 [tool.setuptools.packages.find]
 where = ["."]

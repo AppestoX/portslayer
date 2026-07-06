@@ -1,7 +1,7 @@
 {
   "version": "1.1.0",
   "description": "Cross-platform terminal tool to inspect and kill processes by port",
-  "homepage": "https://github.com/AppestoX/portslayer-cli",
+  "homepage": "https://github.com/AppestoX/portslayer",
   "license": "MIT",
   "depends": "python",
   "url": "https://files.pythonhosted.org/packages/source/p/portslayer/portslayer-1.1.0.tar.gz#/portslayer-1.1.0.tar.gz",

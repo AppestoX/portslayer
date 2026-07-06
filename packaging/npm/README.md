@@ -26,5 +26,5 @@ npx pk find 3000         # inspect port 3000
 npx pk kill 3000         # kill the process on port 3000
 ```
 
-See the [main README](https://github.com/AppestoX/portslayer-cli#readme) for
+See the [main README](https://github.com/AppestoX/portslayer#readme) for
 full documentation.

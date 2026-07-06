@@ -60,8 +60,8 @@ same `portslayer` PyPI package underneath — see
 ### Install from source
 
 ```bash
-git clone https://github.com/AppestoX/portslayer-cli.git
-cd portslayer-cli
+git clone https://github.com/AppestoX/portslayer.git
+cd portslayer
 pip install -e ".[dev]"
 ```
 

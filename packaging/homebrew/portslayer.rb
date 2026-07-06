@@ -2,7 +2,7 @@ class Portslayer < Formula
   include Language::Python::Virtualenv
 
   desc "Cross-platform terminal tool to inspect and kill processes by port"
-  homepage "https://github.com/AppestoX/portslayer-cli"
+  homepage "https://github.com/AppestoX/portslayer"
   url "https://files.pythonhosted.org/packages/source/p/portslayer/portslayer-1.1.0.tar.gz"
   sha256 "REPLACE_WITH_SDIST_SHA256_AFTER_PYPI_PUBLISH"
   license "MIT"
