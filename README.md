@@ -6,7 +6,7 @@
 [![Python](https://img.shields.io/badge/python-3.9%2B-blue)](https://python.org)
 [![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20Windows%20%7C%20macOS-lightgrey)](#)
 
----
+--- 
 
 ## Features
 
