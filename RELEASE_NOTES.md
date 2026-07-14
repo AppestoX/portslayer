@@ -24,4 +24,4 @@ npx @appestox/portslayer                  # Node 14+ and Python 3.9+
 uvx portslayer                            # just uv — no Python setup needed
 ```
 
-Full feature list: see the [v1.1.0 release notes](https://github.com/AppestoX/portslayer/releases/tag/v1.1.0).
+Full feature list: see the [v1.1.0 release notes](https://github.com/AppestoX/portslayer/releases/tag/v1.1.0). 
