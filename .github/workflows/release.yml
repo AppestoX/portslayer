@@ -54,6 +54,10 @@ jobs:
           python -m build
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          # Tolerate re-runs after a partial release: skip files PyPI
+          # already has instead of failing the whole pipeline.
+          skip-existing: true
 
   publish-npm:
     # npm wrapper pip-installs portslayer==<version>, so PyPI must go first
@@ -82,6 +86,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Create GitHub Release
-        run: gh release create "$GITHUB_REF_NAME" --title "PortSlayer $GITHUB_REF_NAME" --notes-file RELEASE_NOTES.md
+        # Tolerate re-runs: skip creation if the release already exists.
+        run: |
+          gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1 || \
+            gh release create "$GITHUB_REF_NAME" --title "PortSlayer $GITHUB_REF_NAME" --notes-file RELEASE_NOTES.md
         env:
           GH_TOKEN: ${{ github.token }}
