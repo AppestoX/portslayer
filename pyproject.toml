@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "portslayer"
-version = "1.1.0"
+version = "1.1.1"
 description = "Cross-platform CLI + interactive TUI to list and kill processes by port"
 readme = "README.md"
 license = { text = "MIT" }
@@ -19,13 +19,14 @@ classifiers = [
     "Operating System :: POSIX :: Linux",
     "Operating System :: Microsoft :: Windows",
     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Topic :: System :: Networking :: Monitoring",
     "Topic :: Utilities",
 ]
-requires-python = ">=3.10"
+requires-python = ">=3.9"
 dependencies = [
     "typer>=0.12",
     "rich>=13",

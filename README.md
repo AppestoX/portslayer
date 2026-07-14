@@ -3,7 +3,7 @@
 > Cross-platform CLI + interactive TUI to list active ports and safely kill processes by port number.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Python](https://img.shields.io/badge/python-3.10%2B-blue)](https://python.org)
+[![Python](https://img.shields.io/badge/python-3.9%2B-blue)](https://python.org)
 [![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20Windows%20%7C%20macOS-lightgrey)](#)
 
 ---
@@ -17,7 +17,7 @@
 - **Kill processes by port or by process name** — with mandatory confirmation before any destructive action
 - **JSON output** (`--json`) for scripting, plus built-in shell completion (`--install-completion`)
 - **Cross-platform** — Linux (via `ss`/`lsof`), Windows (via `netstat`/`taskkill`), macOS (via `lsof`)
-- **Install however you like** — pip, npx/npm, or Homebrew/Scoop
+- **Install however you like** — pip, npx/npm, or uvx
 
 ---
 
@@ -39,23 +39,29 @@ Pick whichever package manager you already have — they all install the same
 tool.
 
 ```bash
-pip install portslayer              # Python / pip
+pip install portslayer              # Python / pip — requires Python >= 3.9
 npx @appestox/portslayer            # Node.js — try it with zero install
 npm install -g @appestox/portslayer # Node.js — install permanently
 uvx portslayer                      # zero-install, no Python setup needed
-brew install AppestoX/PortSlayer/portslayer   # Homebrew (macOS/Linux)
-scoop bucket add AppestoX https://github.com/AppestoX/scoop-bucket
-scoop install portslayer                      # Scoop (Windows)
 ```
 
-The npm, Homebrew, and Scoop packages are thin wrappers that install the
-same `portslayer` PyPI package underneath — see
-[`packaging/`](packaging/) for how each is built and published.
+Homebrew and Scoop manifests live in [`packaging/`](packaging/) but are not
+published to a public tap/bucket yet.
 
-### Prerequisites
+The npm package is a thin wrapper that installs the same `portslayer` PyPI
+package underneath — see [`packaging/`](packaging/) for how each is built
+and published.
 
-- Python 3.10 or later (the npm/Homebrew/Scoop wrappers install this
-  dependency for you if it's missing)
+### Minimum supported versions
+
+| Method | Requirements |
+|---|---|
+| `pip install portslayer` | Python **3.9+** |
+| `npx @appestox/portslayer` / `npm install -g` | Node **14+** and Python **3.9+** (the wrapper pip-installs the PyPI package; it does **not** install Python for you) |
+| `uvx portslayer` | [uv](https://docs.astral.sh/uv/) — it downloads a compatible Python automatically |
+
+If pip says `No matching distribution found for portslayer`, your Python is
+older than 3.9 — check with `python --version` and upgrade.
 
 ### Install from source
 

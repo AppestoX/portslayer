@@ -1,27 +1,27 @@
-# PortSlayer v1.1.0
+# PortSlayer v1.1.1
 
-First public release of the PortSlayer CLI — a cross-platform command-line tool and interactive terminal dashboard to inspect and kill processes by port.
+Compatibility release — PortSlayer now supports **Python 3.9+** (previously 3.10+).
 
-## Highlights
+## Changes
 
-- **Interactive TUI dashboard** — run `pk` (or `portslayer`) with no arguments for a full-screen, keyboard-driven view: `↑`/`↓` to navigate, `/` to search, `k`/`Del` to kill (with confirmation), `r` to refresh, auto-refreshes every 3s
-- **Short alias `pk`** — every command works as both `portslayer <cmd>` and `pk <cmd>`
-- **Partial port search** — `pk find 808` matches 8080, 8081, 8083, ... ; same for `list --port`. `kill` intentionally stays exact-only for safety
-- **Kill by process name** — `pk kill --name node` kills every port that process owns, no need to look up the port first
-- **JSON output** — `--json` on `list`/`find` for scripting (`pk list --json | jq ...`)
-- **Shell completion** — `pk --install-completion` (built into Typer, zero extra code)
-- **Install anywhere** — `pip install portslayer`, `npx @appestox/portslayer` / `npm install -g @appestox/portslayer`, or via Homebrew/Scoop (see [`packaging/`](packaging/)); all wrap the same PyPI package
-
-## Design decisions
-
-- Every subprocess call uses explicit argument lists — never `shell=True` — to prevent command injection
-- `kill` always requires explicit confirmation (unless `--force`) before acting
-- Users are warned when not running with admin/root privileges, since some processes will be hidden
+- **Lowered minimum Python to 3.9** — the code never used 3.10-only features, so
+  `requires-python` is now `>=3.9`; the full test suite passes on 3.9 (on 3.9,
+  pip resolves Typer 0.23.x, the last line supporting it)
+- **npm wrapper now checks the Python version** — if only an older Python is on
+  `PATH` (e.g. 3.8), install and run print a clear
+  "Python X.Y was found, but PortSlayer needs 3.9 or newer" message instead of
+  pip's cryptic `No matching distribution found` error
+- **CI now tests on Python 3.9 and 3.12** across Linux, Windows, and macOS
+- README: accurate per-method minimum-version table (pip needs Python 3.9+;
+  npm/npx need Node 14+ *and* Python 3.9+; `uvx` needs neither since uv
+  downloads a compatible Python)
 
 ## Installation
 
 ```bash
-pip install portslayer
+pip install portslayer                    # Python 3.9+
+npx @appestox/portslayer                  # Node 14+ and Python 3.9+
+uvx portslayer                            # just uv — no Python setup needed
 ```
 
-See the [README](README.md) for npm, Homebrew, and Scoop instructions.
+Full feature list: see the [v1.1.0 release notes](https://github.com/AppestoX/portslayer/releases/tag/v1.1.0).
